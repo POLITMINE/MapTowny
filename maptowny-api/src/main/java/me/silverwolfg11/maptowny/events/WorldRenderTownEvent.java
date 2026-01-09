@@ -51,13 +51,14 @@ public class WorldRenderTownEvent extends Event implements Cancellable {
     private final MarkerOptions.Builder markerOptionsBuilder;
 
     private String homeBlockIconKey;
-
     private String outpostIconKey;
+    private int iconSizeX;
+    private int iconSizeZ;
 
     private boolean cancelled = false;
 
     public WorldRenderTownEvent(String worldName, String townName, UUID townUUID, String homeBlockIconKey, String outpostIconKey,
-                                List<Polygon> polys, MarkerOptions.Builder markerOptionsBuilder) {
+                                List<Polygon> polys, MarkerOptions.Builder markerOptionsBuilder, int iconSizeX, int iconSizeZ) {
         super(!Bukkit.isPrimaryThread());
         this.worldName = worldName;
         this.townName = townName;
@@ -66,6 +67,8 @@ public class WorldRenderTownEvent extends Event implements Cancellable {
         this.outpostIconKey = outpostIconKey;
         this.polygons = polys;
         this.markerOptionsBuilder = markerOptionsBuilder;
+        this.iconSizeX = iconSizeX;
+        this.iconSizeZ = iconSizeZ;
     }
 
     /**
@@ -169,6 +172,22 @@ public class WorldRenderTownEvent extends Event implements Cancellable {
      */
     public void setOutpostIconKey(@NotNull String outpostIconKey) {
         this.outpostIconKey = outpostIconKey;
+    }
+
+    public int getIconSizeX() {
+        return iconSizeX;
+    }
+
+    public void setIconSizeX(int iconSizeX) {
+        this.iconSizeX = iconSizeX;
+    }
+
+    public int getIconSizeZ() {
+        return iconSizeZ;
+    }
+
+    public void setIconSizeZ(int iconSizeZ) {
+        this.iconSizeZ = iconSizeZ;
     }
 
     @Override

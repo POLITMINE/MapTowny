@@ -274,9 +274,17 @@ public class TownyLayerManager implements LayerManager {
                 final String homeBlockIconKey = tre.isCapital() ? CAPITAL_ICON : TOWN_ICON;
 
                 // Call event
-                WorldRenderTownEvent event = new WorldRenderTownEvent(worldName, tre.getTownName(), tre.getTownUUID(),
-                                                                      homeBlockIconKey, OUTPOST_ICON,
-                                                                      parts, optionsBuilder);
+                WorldRenderTownEvent event = new WorldRenderTownEvent(
+                        worldName,
+                        tre.getTownName(),
+                        tre.getTownUUID(),
+                        homeBlockIconKey,
+                        OUTPOST_ICON,
+                        parts,
+                        optionsBuilder,
+                        config.getIconSizeX(),
+                        config.getIconSizeY()
+                );
 
                 Bukkit.getPluginManager().callEvent(event);
 
@@ -289,9 +297,15 @@ public class TownyLayerManager implements LayerManager {
                 worldProvider.addMultiPolyMarker(townKey, parts, generalOptions);
 
                 // Add outpost markers for the current world
-                renderOutpostMarker(tre, worldName, worldProvider,
-                                    event.getOutpostIconKey(), generalOptions,
-                                    config.getIconSizeX(), config.getIconSizeY());
+                renderOutpostMarker(
+                        tre,
+                        worldName,
+                        worldProvider,
+                        event.getOutpostIconKey(),
+                        generalOptions,
+                        event.getIconSizeX(),
+                        event.getIconSizeZ()
+                );
 
                 // Check if this is the proper world provider to add the town icon
                 if (homeBlockWorld.equals(worldName)) {
@@ -305,9 +319,14 @@ public class TownyLayerManager implements LayerManager {
                                                                  .hoverTooltip(generalOptions.hoverTooltip())
                                                                  .build();
 
-                        worldProvider.addIconMarker(townIconKey, event.getHomeBlockIconKey(), homeblockPoint.get(),
-                                                    config.getIconSizeX(), config.getIconSizeY(),
-                                                    iconOptions);
+                        worldProvider.addIconMarker(
+                                townIconKey,
+                                event.getHomeBlockIconKey(),
+                                homeblockPoint.get(),
+                                event.getIconSizeX(),
+                                event.getIconSizeZ(),
+                                iconOptions
+                        );
                     }
                 }
             }
