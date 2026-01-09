@@ -26,7 +26,7 @@ import me.silverwolfg11.maptowny.objects.MarkerOptions;
 import me.silverwolfg11.maptowny.objects.Point2D;
 import me.silverwolfg11.maptowny.objects.Polygon;
 import me.silverwolfg11.maptowny.platform.MapLayer;
-import org.dynmap.DynmapAPI;
+import org.dynmap.DynmapCommonAPI;
 import org.dynmap.markers.AreaMarker;
 import org.dynmap.markers.Marker;
 import org.dynmap.markers.MarkerIcon;
@@ -43,7 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
 
 public class DynmapLayerWrapper implements MapLayer {
-    private final DynmapAPI dynmapAPI;
+    private final DynmapCommonAPI dynmapAPI;
     private final String worldName;
     private final MarkerSet markerSet;
     private final int zIndex;
@@ -52,7 +52,7 @@ public class DynmapLayerWrapper implements MapLayer {
     // Marker Key -> Number of Polygons
     private final Map<String, Integer> multiPolys = new ConcurrentHashMap<>();
 
-    public DynmapLayerWrapper(DynmapAPI dynmapAPI, String worldName, MarkerSet markerSet, int zIndex) {
+    public DynmapLayerWrapper(DynmapCommonAPI dynmapAPI, String worldName, MarkerSet markerSet, int zIndex) {
         this.dynmapAPI = dynmapAPI;
         this.worldName = worldName;
         this.markerSet = markerSet;

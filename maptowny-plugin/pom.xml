@@ -118,6 +118,7 @@
         </dependency>
 
         <!-- Platforms -->
+        <!--
         <dependency>
             <groupId>me.silverwolfg11</groupId>
             <artifactId>maptowny-pl3xmap-v1</artifactId>
@@ -135,7 +136,7 @@
             <artifactId>maptowny-pl3xmap-v3</artifactId>
             <version>${project.parent.version}</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>me.silverwolfg11</groupId>
             <artifactId>maptowny-squaremap</artifactId>

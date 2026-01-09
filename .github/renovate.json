@@ -1,0 +1,16 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended",
+        ":disableRateLimiting",
+        "group:all"
+    ],
+    "ignoreDeps": [
+        "com.destroystokyo.paper:paper-api",
+        "com.palmergames.bukkit.towny:towny",
+        "com.sk89q.worldguard:worldguard-core",
+        "com.sk89q.worldguard:worldguard-bukkit",
+        "com.sk89q.worldedit:worldedit-core",
+        "com.sk89q.worldedit:worldedit-bukkit"
+    ]
+}

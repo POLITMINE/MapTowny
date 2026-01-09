@@ -27,8 +27,7 @@ import me.silverwolfg11.maptowny.platform.MapWorld;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.dynmap.DynmapAPI;
+import org.dynmap.DynmapCommonAPI;
 import org.dynmap.markers.MarkerIcon;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,10 +39,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class DynmapPlatform implements MapPlatform {
-    private final DynmapAPI dynmapAPI;
+    private final DynmapCommonAPI dynmapAPI;
 
     public DynmapPlatform() {
-        dynmapAPI = (DynmapAPI) Bukkit.getPluginManager().getPlugin("dynmap");
+        dynmapAPI = (DynmapCommonAPI) Bukkit.getPluginManager().getPlugin("dynmap");
     }
 
 
