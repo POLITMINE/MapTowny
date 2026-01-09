@@ -24,6 +24,7 @@ jobs:
             17
           distribution: 'temurin'
           check-latest: true
+          cache: maven
 
       - name: Run build
         run: chmod +x ./mvnw && ./mvnw clean package
