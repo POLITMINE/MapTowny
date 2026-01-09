@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: |
-            8
+            1.8
             16
             17
           distribution: 'temurin'
