@@ -22,10 +22,7 @@ jobs:
           distribution: 'temurin'
           check-latest: true
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
-
-      - name: Run build with Gradle Wrapper
+      - name: Run build
         run: chmod +x ./mvnw && ./mvnw clean package
 
       - name: Create Release
